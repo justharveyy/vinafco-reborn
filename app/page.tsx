@@ -1,6 +1,30 @@
+"use client"
+
 import Image from 'next/image';
+import { useScroll, motion } from 'framer-motion';
+import { useRef } from 'react'
 
 export default function Home() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 0.5", "1 1"]
+  });
+
+  const fadeInUpAnimation = {
+    initial: {
+      opacity: 0,
+      y: 100
+    },
+    animate: {
+      opacity: 100,
+      y: 0,
+      transition: {
+        delay: 0.5
+      }
+    }
+  }
+
   return (
     <>
       <header className="px-10 py-5 grid grid-cols-2 z-10 absolute w-full bg-slate-900">
@@ -11,8 +35,8 @@ export default function Home() {
             src="/x.svg"
             width={25}
             height={25}
-            style="color: white;"
-            className="mr-2"
+            className="mr-2 text-white"
+            alt="x"
           />
           Vinafco
         </div>
@@ -24,7 +48,7 @@ export default function Home() {
           <a href="/contact" className="font-semibold text-slate-500 hover:text-white text-sm focus:outline-none">Contact</a>
         </div>
       </header>
-      <main className="w-full h-full relative">
+      <main className="w-full h-full">
         <section className="px-10 py-5 w-screen h-screen ">
           <div className="absolute inset-0 -z-10 overflow-hidden">
             <svg
@@ -70,13 +94,14 @@ export default function Home() {
                 width={1200}
                 height={800} 
                 className="absolute w-full h-auto rounded-lg -z-1 left-[20%]"
+                alt="mainview"
               />
             </div>
           </div>
         </section>
-        <section className="p-10 w-full h-fit mb-10">
+        <section className="p-10 w-full h-fit mb-10" ref={ref}>
           <div className="flex w-full h-full items-center justify-center">
-            <div class="w-[70%] h-fit">
+            <div className="w-[70%] h-fit">
               <div className="border border-2 border-sky-600 rounded-full w-[70px] h-[70px] text-center text-sky-600 bg-sky-800/50 flex items-center justify-center text-3xl m-auto mb-10">
                 1
               </div>
@@ -84,30 +109,30 @@ export default function Home() {
               <p className="text-center text-white text-4xl font-semibold mb-5">Logistics with ease</p>
               <hr className="border-sky-600 w-[150px] m-auto mb-5" />
               <p className="text-center text-white text-lg mb-10">Vinafco provides industry-leading losgistics and management. Using international standards and protocols, we can provide our customers with a reliable experience.</p>
-              <div className="w-full grid grid-cols-2 gap-10">
-                <div className="relative w-full border border-1 border-fuchsia-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-fuchsia-900/50 h-[250px]">
-                  <p className="text-fuchsia-600 text-xl mb-4">Storage Management</p>
+              <div className="w-[70%] grid grid-cols-2 gap-10 flex justify-center m-auto">
+                <motion.div className="relative w-full border border-1 border-sky-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-sky-900/50 h-[250px]" style={{ opacity: scrollYProgress }}>
+                  <p className="text-sky-600 text-xl mb-4">Storage Management</p>
                   <p className="text-sm text-slate-400">Vinafco, a leading warehousing provider in Vietnam with 35 years of experience, offers unmatched accuracy and reliability.</p>
-                </div>
-                <div className="relative w-full border border-1 border-fuchsia-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-fuchsia-900/50 h-[250px]">
-                  <p className="text-fuchsia-600 text-xl mb-4">Transportation</p>
+                </motion.div>
+                <motion.div className="relative w-full border border-1 border-sky-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-sky-900/50 h-[250px]" style={{ opacity: scrollYProgress }}>
+                  <p className="text-sky-600 text-xl mb-4">Transportation</p>
                   <p className="text-sm text-slate-400">Road transportation is a key strength of Vinafco, featuring a large, diverse fleet tailored to meet various client needs.</p>
-                </div>
-                <div className="relative w-full border border-1 border-fuchsia-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-fuchsia-900/50 h-[250px]">
-                  <p className="text-fuchsia-600 text-xl mb-4">Freight Forwarding</p>
+                </motion.div>
+                <motion.div className="relative w-full border border-1 border-sky-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-sky-900/50 h-[250px]" style={{ opacity: scrollYProgress }}>
+                  <p className="text-sky-600 text-xl mb-4">Freight Forwarding</p>
                   <p className="text-sm text-slate-400">Vinafco offers international sea and air freight services with a global network of agents, handling customs clearance at ports, airports, and checkpoints nationwide.</p>
-                </div>
-                <div className="relative w-full border border-1 border-fuchsia-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-fuchsia-900/50 h-[250px]">
-                  <p className="text-fuchsia-600 text-xl mb-4">Sea Transportation</p>
+                </motion.div>
+                <motion.div className="relative w-full border border-1 border-sky-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-sky-900/50 h-[250px]" style={{ opacity: scrollYProgress }}>
+                  <p className="text-sky-600 text-xl mb-4">Sea Transportation</p>
                   <p className="text-sm text-slate-400">Specializing in fast, safe, and cost-effective domestic sea freight, Vinafco is trusted by partners and recognized as one of the most reputable maritime transport companies.</p>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </section>
-        <section className="w-full h-screen">
-          <div className="w-full h-full grid grid-cols-2 p-10">
-            <div class="flex w-full h-full text-left items-center">
+        <section className="w-full h-screen bg-slate-800" style={{ clipPath: "polygon(0% 10%, 100% 0%, 100% 100%, 0% 90%)" }}>
+          <div className="w-full h-full grid grid-cols-2">
+            <div className="flex w-full h-full text-left items-center px-10">
               <div className="w-full h-fit p-5">
                 <div className="border border-2 border-green-600 rounded-full w-[70px] h-[70px] text-center text-green-600 bg-green-800/50 flex items-center justify-center text-3xl mb-10">
                   2
@@ -116,27 +141,136 @@ export default function Home() {
                 <p className="text-white text-4xl font-semibold mb-5">These companies trust us, you should too</p>
               </div>
             </div>
-            <div className="w-full h-full relative">
-                <div className="rounded-full w-[300px] h-[300px] bg-fuchsia-800/80 -z-1 filter mix-blend-multiple blur-xl top-0 -left-4"></div>
-                <div className="rounded-full w-[300px] h-[300px] bg-fuchsia-800/80 -z-1 filter mix-blend-multiple blur-xl top-0 -right-4"></div>
-                <div className="rounded-full w-[300px] h-[300px] bg-fuchsia-800/80 -z-1 filter mix-blend-multiple blur-xl -bottom-8"></div>
-              <div className="relative grid grid-cols-2 gap-10 grid-rows-2 grid-flow-col">
-                <div className="w-full p-5 flex h-[300px] bg-slate-800 rounded-lg">
-                  
+            <motion.div className="w-full h-full bg-white" variants={fadeInUpAnimation} initial="initial" whileInView="animate">
+              <div className="grid grid-cols-3 grid-rows-3 w-full gap-0">
+                <div className="w-full p-5 flex h-[300px] bg-white items-center justify-center">
+                  <div className="w-fit h-fit">
+                    <Image
+                      src="/samsung.jpg"
+                      width="1280"
+                      height="700"
+                      alt="samsung"
+                      className="h-auto w-full"
+                    />
+                  </div>
                 </div>
-                <div className="w-full p-5 flex h-[300px] bg-slate-800 rounded-lg">
-                  
+                <div className="w-full p-5 flex h-[300px] bg-white items-center justify-center">
+                  <Image
+                    src="/onemount.png"
+                    width="1280"
+                    height="700"
+                    alt="onemount"
+                    className="h-auto w-full"
+                  />
                 </div>
-                <div className="w-full p-5 flex h-[300px] bg-slate-800 rounded-lg">
-                  
+                <div className="w-full p-5 flex h-[300px] bg-white items-center justify-center">
+                  <Image
+                      src="/hayat.png"
+                      width="1280"
+                      height="700"
+                      alt="hayat"
+                      className="h-auto w-full"
+                  />
                 </div>
-                <div className="w-full p-5 flex h-[300px] bg-slate-800 rounded-lg">
-                  
+                <div className="w-full p-5 flex h-[300px] bg-[#EBB730] items-center justify-center">
+                  <Image
+                      src="/jotun.png"
+                      width="1280"
+                      height="700"
+                      alt="jotun"
+                      className="h-auto w-full"
+                  />
                 </div>
-              </div>              
+                <div className="w-full p-5 flex h-[300px] bg-[#153767] items-center justify-center">
+                  <Image
+                      src="/masan.jpg"
+                      width="1280"
+                      height="700"
+                      alt="masan"
+                      className="h-auto w-full"
+                  />
+                </div>
+                <div className="w-full p-5 flex h-[300px] bg-[#0265FF] items-center justify-center">
+                  <Image
+                      src="/panasonic.jpg"
+                      width="1280"
+                      height="700"
+                      alt="panasonic"
+                      className="h-auto w-full"
+                  />
+                </div>
+                <div className="w-full p-5 flex h-[300px] bg-white items-center justify-center">
+                  <Image
+                      src="/habeco.png"
+                      width="1280"
+                      height="700"
+                      alt="habeco"
+                      className="h-auto w-full"
+                  />
+                </div>
+                <div className="w-full p-5 flex h-[300px] bg-white items-center justify-center">
+                  <Image
+                      src="/kimberlyclark.svg"
+                      width="1280"
+                      height="700"
+                      alt="kimberlyclark"
+                      className="h-auto w-full"
+                  />
+                </div>
+                <div className="w-full p-5 flex h-[300px] bg-white items-center justify-center">
+                  <Image
+                      src="/ajinomoto.png"
+                      width="1280"
+                      height="700"
+                      alt="ajinomoto"
+                      className="h-auto w-full"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+        <section className="w-full h-fit pt-10 pb-10">
+          <div className="flex w-full h-full items-center justify-center">
+            <div className="w-[40%] h-fit py-20 px-10 bg-slate-100 rounded-xl">
+              <div className="border border-2 border-indigo-600 rounded-full w-[70px] h-[70px] text-center text-indigo-600 bg-indigo-600/50 flex items-center justify-center text-3xl m-auto mb-10">
+                3
+              </div>
+              <p className="text-center text-2xl text-indigo-600 font-semibold mb-5">Contact Us</p>
+              <p className="text-center text-4xl font-semibold mb-5">We would love to help you</p>
+              <hr className="border-indigo-600 w-[150px] m-auto mb-5" />
+              <p className="text-center text-lg mb-10">Fill in the form below and let's get in touch</p>
+              <form className="w-full m-auto w-full space-y-6">
+                <div className="w-full grid grid-cols-2 gap-3 mb-5">
+                  <input name="firstname" type="text" required placeholder="First Name" className="block w-full rounded-md border-0 py-2 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none"/>
+                  <input name="lastname" type="text" required placeholder="Last Name" className="block w-full rounded-md border-0 py-2 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none"/>
+                </div>
+                <input name="email" type="email" required placeholder="Email" className="block w-full rounded-md border-0 py-2 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none"/>
+                <textarea name="description" className="block w-full rounded-md border-0 py-2 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none" rows={10} placeholder="How can we assist you?"></textarea>
+                <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
+              </form>
             </div>
           </div>
         </section>
+        <footer className="w-full bg-slate-800 h-fit py-20 px-20 grid grid-cols-3" style={{ clipPath: "polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%)" }}>
+          <div className="w-full">
+            <div className="flex items-center space-x-1 text-3xl text-white font-semibold mb-5">
+              <Image
+                src="/x.svg"
+                width={40}
+                height={40}
+                className="mr-2 text-white"
+                alt="x"
+              />
+              Vinafco
+            </div>
+            <div className="w-full text-slate-400 font-semibold">
+              Thinking about Supply Chains since 1985
+            </div>
+          </div>
+          <div className="w-full"></div>
+          <div className="w-full"></div>
+        </footer> 
       </main>
     </>
   )

@@ -33,3 +33,15 @@ body {
 	animation: fadeInUpAnimation 0.3s ease-in-out;
 	animation-delay: 0.2s;
 }
+
+.choppedDiv {
+	position: relative;
+	z-index: 0;
+}
+
+.choppedDiv::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
+}
