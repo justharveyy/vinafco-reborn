@@ -142,20 +142,20 @@ export default function Home() {
                 <p className="text-center text-sky-600 font-semibold text-2xl mb-5">Look at these numbers</p>
                 <div className="w-full grid md:grid-cols-3 grid-cols-1">
                   <div className="p-5 w-full flex items-center justify-center">
-                    <div class="text-center">
+                    <div className="text-center">
                       <p className="text-4xl text-white font-bold mb-3">Top 500</p>
                       <p className="text-xl text-slate-500"><a href="https://vnr500.com.vn/Thong-tin-doanh-nghiep/CONG-TY-CP-VINAFCO-Chart--508-2020.html" className="hover:underline decoration-offset-5 hover:underline-1 underline-slate-500">Largest Vietnamese enterprise</a></p>
                     </div>
                   </div>
                   <div className="p-5 w-full">
-                    <div class="text-center">
+                    <div className="text-center">
                       <p className="text-4xl text-white font-bold mb-3">50+ million $</p>
                       <p className="text-xl text-slate-500"><a href="" className="hover:underline decoration-offset-5 hover:underline-1 underline-slate-500">in revenue last year</a></p>
                     </div>
                   </div>
                   <div className="p-5 w-full">
-                    <div class="text-center">
-                      <p className="text-4xl text-white font-bold mb-3">>175,000 ㎡</p>
+                    <div className="text-center">
+                      <p className="text-4xl text-white font-bold mb-3">{'>'}175,000 ㎡</p>
                       <p className="text-xl text-slate-500"><a href="" className="hover:underline decoration-offset-5 hover:underline-1 underline-slate-500">of warehouse space around Vietnam</a></p>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export default function Home() {
                       <Image src="/david-s.png" height={50} width={50} alt="david" className="rounded-full mr-3"/>
                       <div>
                         <p className="text-lg text-white font-semibold mb-0">David S.</p>
-                        <p class="text-slate-400 text-sm">Extinguished businessman</p>
+                        <p className="text-slate-400 text-sm">Extinguished businessman</p>
                       </div>
                     </div>
                     <div className="w-full text-white">
@@ -289,7 +289,7 @@ export default function Home() {
               <p className="text-center text-2xl text-indigo-600 font-semibold mb-5">Contact Us</p>
               <p className="text-center text-4xl font-semibold mb-5">We would love to help you</p>
               <hr className="border-indigo-600 w-[150px] m-auto mb-5" />
-              <p className="text-center text-lg mb-10">Fill in the form below and let's get in touch</p>
+              <p className="text-center text-lg mb-10">Fill in the form below and let{`'`}s get in touch</p>
               <form className="w-full m-auto w-full space-y-6">
                 <div className="w-full grid grid-cols-2 gap-3 mb-5">
                   <input name="firstname" type="text" required placeholder="First Name" className="block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none"/>
