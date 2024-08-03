@@ -104,7 +104,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="relative p-20 w-full h-fit mb-10">
+        <section className="relative py-20 px-5 w-full h-fit mb-10">
           <div className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
             <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style={{ clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" }}></div>
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
               <p className="text-center text-white text-4xl font-semibold mb-5">Logistics with ease</p>
               <hr className="border-sky-600 w-[150px] m-auto mb-5" />
               <p className="text-center text-white text-lg mb-10">Vinafco provides industry-leading losgistics and management. Using international standards and protocols, we can provide our customers with a reliable experience.</p>
-              <motion.div className="lg:w-[70%] w-full grid md:grid-cols-2 grid-cols-1 gap-10 flex justify-center m-auto mb-20" variants={fadeInUpAnimation} initial="initial" whileInView="animate" viewport={{ once: true }}>
+              <motion.div className="lg:w-[70%] w-full grid md:grid-cols-2 grid-cols-1 gap-8 flex justify-center m-auto mb-20" variants={fadeInUpAnimation} initial="initial" whileInView="animate" viewport={{ once: true }}>
                 <div className="relative w-full border border-1 border-sky-900 p-8 rounded-xl shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] shadow-sky-900/50 h-[250px]">
                   <p className="text-sky-600 text-xl mb-4">Storage Management</p>
                   <p className="text-sm text-slate-400">Vinafco, a leading warehousing provider in Vietnam with 35 years of experience, offers unmatched accuracy and reliability.</p>
